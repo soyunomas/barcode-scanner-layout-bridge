@@ -1,0 +1,16 @@
+[Unit]
+Description=Barcode scanner layout bridge for WCM HIDKeyBoard 34eb:1502
+Documentation=https://github.com/soyunomas/barcode-scanner-layout-bridge
+After=systemd-udevd.service
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/default/escanner
+Environment=ESCANNER_OUTPUT_LAYOUT=es
+Environment=ESCANNER_EXTRA_ARGS=
+ExecStart=/usr/local/bin/scanner-bridge --output-layout ${ESCANNER_OUTPUT_LAYOUT} $ESCANNER_EXTRA_ARGS
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

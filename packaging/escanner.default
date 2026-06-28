@@ -1,0 +1,7 @@
+# Layout used by the desktop session that receives the corrected keystrokes.
+# Supported by scanner-bridge: es, us, fr, de.
+ESCANNER_OUTPUT_LAYOUT=es
+
+# Extra scanner-bridge arguments, for example:
+# ESCANNER_EXTRA_ARGS=--key-delay-us 2000 --char-delay-us 6000
+ESCANNER_EXTRA_ARGS=

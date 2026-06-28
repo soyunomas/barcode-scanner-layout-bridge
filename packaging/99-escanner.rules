@@ -1,0 +1,7 @@
+# WCM HIDKeyBoard barcode scanner tested with this project.
+# This gives active desktop sessions access through logind ("uaccess") and
+# also allows members of the input group to run the bridge without sudo.
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{idVendor}=="34eb", ATTRS{idProduct}=="1502", MODE="0660", GROUP="input", TAG+="uaccess", SYMLINK+="input/escanner-wcm"
+
+# uinput is needed for scanner-bridge to emit corrected keystrokes.
+KERNEL=="uinput", SUBSYSTEM=="misc", MODE="0660", GROUP="input", TAG+="uaccess", OPTIONS+="static_node=uinput"

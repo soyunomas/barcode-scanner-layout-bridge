@@ -1,5 +1,7 @@
 # barcode-scanner-layout-bridge
 
+Languages: English | [Español](README.es.md)
+
 User-space Linux bridge for a problematic USB barcode scanner that behaves as a HID keyboard and types URL characters with the wrong keyboard layout.
 
 Repository:
